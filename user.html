@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Użytkownika & Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-icon small">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </div>
+                <span>StrefaBloga</span>
+                <span class="role-badge user">Użytkownik</span>
+            </div>
+            <div class="nav-user">
+                <span class="user-greeting">Witaj, <strong id="currentUserName">Użytkowniku</strong>!</span>
+                <button id="logoutBtn" class="logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+                    </svg>
+                    Wyloguj się
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-banner">
+            <div class="hero-content">
+                <span class="hero-tag">Aktualności & Artykuły</span>
+                <h2>Witaj w społeczności twórców i technologii</h2>
+                <p>Przeglądaj najnowsze wpisy z dziedziny programowania, designu i nowoczesnych rozwiązań chmurowych. Miłego czytania!</p>
+                <div class="hero-actions">
+                    <a href="#articles" class="hero-btn primary">Przejdź do wpisów</a>
+                    <span class="hero-stats">🔥 12 nowych wpisów w tym tygodniu</span>
+                </div>
+            </div>
+            <div class="hero-art">
+                <svg viewBox="0 0 400 300" class="hero-svg">
+                    <defs>
+                        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8"/>
+                            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.9"/>
+                        </linearGradient>
+                        <linearGradient id="g2" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#ec4899" stop-opacity="0.4"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="280" cy="150" r="110" fill="url(#g2)" filter="blur(25px)"/>
+                    <rect x="50" y="40" width="280" height="190" rx="16" fill="white" fill-opacity="0.95" stroke="#e2e8f0" stroke-width="2"/>
+                    <rect x="75" y="65" width="130" height="14" rx="4" fill="#3b82f6"/>
+                    <rect x="75" y="95" width="230" height="8" rx="4" fill="#cbd5e1"/>
+                    <rect x="75" y="115" width="190" height="8" rx="4" fill="#e2e8f0"/>
+                    <rect x="75" y="135" width="210" height="8" rx="4" fill="#e2e8f0"/>
+                    <rect x="75" y="170" width="90" height="32" rx="8" fill="url(#g1)"/>
+                    <circle cx="310" cy="70" r="16" fill="#eff6ff"/>
+                    <path d="M305 70l4 4 8-8" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </section>
+
+        <section id="articles" class="blog-section">
+            <div class="section-title">
+                <h2>Ostatnie publikacje</h2>
+                <p>Wyselekcjonowane artykuły techniczne i inspiracje dla każdego developera</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-thumb grad-1">
+                        <span class="blog-category">Frontend</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">5 min czytania • 28 Października 2026</div>
+                        <h3>Architektura nowoczesnych aplikacji w 2026 roku</h3>
+                        <p>Jak zmienia się podejście do tworzenia UI? Odkryj mikrofrontendy, server-side rendering i optymalizacje wydajności.</p>
+                        <div class="blog-footer">
+                            <span class="author">Tomasz Nowak</span>
+                            <span class="read-more">Czytaj dalej →</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-thumb grad-2">
+                        <span class="blog-category">Design & UI</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">4 min czytania • 25 Października 2026</div>
+                        <h3>Minimalizm i czytelność: Sekrety dobrego designu</h3>
+                        <p>Dlaczego prostota zawsze wygrywa ze skomplikowanymi interfejsami? Zasady typografii i operowania przestrzenią (whitespace).</p>
+                        <div class="blog-footer">
+                            <span class="author">Anna Wiśniewska</span>
+                            <span class="read-more">Czytaj dalej →</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-thumb grad-3">
+                        <span class="blog-category">Bezpieczeństwo</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">7 min czytania • 20 Października 2026</div>
+                        <h3>Uwierzytelnianie bez tajemnic: Sesje vs Tokeny</h3>
+                        <p>Przewodnik po bezpiecznym zarządzaniu kontami użytkowników, haszowaniu haseł i ochronie przed najczęstszymi atakami.</p>
+                        <div class="blog-footer">
+                            <span class="author">Kamil Zieliński</span>
+                            <span class="read-more">Czytaj dalej →</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="user.js"></script>
+</body>
+</html>

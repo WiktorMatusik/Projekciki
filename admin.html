@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administratora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-icon small">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span>AdminPortal</span>
+                <span class="role-badge admin">Administrator</span>
+            </div>
+            <div class="nav-user">
+                <span class="user-greeting">Zalogowano: <strong id="adminName">admin</strong></span>
+                <button id="logoutBtn" class="logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+                    </svg>
+                    Wyloguj się
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Zarządzanie Użytkownikami</h1>
+                <p>Twórz konta użytkowników i zarządzaj dostępem do portalu.</p>
+            </div>
+            <div class="stats-card">
+                <div class="stat-number" id="userCount">0</div>
+                <div class="stat-label">Aktywnych kont</div>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <section class="card form-card">
+                <div class="card-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="8.5" cy="7" r="4"/>
+                        <line x1="20" y1="8" x2="20" y2="14"/>
+                        <line x1="23" y1="11" x2="17" y2="11"/>
+                    </svg>
+                    <h3>Dodaj nowego użytkownika</h3>
+                </div>
+
+                <div id="adminAlert" class="alert hidden"></div>
+
+                <form id="addUserForm">
+                    <div class="input-group">
+                        <label for="newUsername">Login użytkownika</label>
+                        <input type="text" id="newUsername" placeholder="np. jan_kowalski" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="newPassword">Hasło</label>
+                        <input type="password" id="newPassword" placeholder="Wpisz hasło" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Utwórz konto
+                    </button>
+                </form>
+            </section>
+
+            <section class="card table-card">
+                <div class="card-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <h3>Lista zarejestrowanych kont</h3>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>Użytkownik</th>
+                                <th>Rola</th>
+                                <th>Data dodania</th>
+                                <th class="text-right">Akcja</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
